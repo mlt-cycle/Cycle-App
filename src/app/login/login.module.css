@@ -1,0 +1,123 @@
+.page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 1fr);
+  gap: var(--gutter);
+  padding: var(--gutter);
+}
+
+.lava {
+  position: relative;
+  overflow: hidden;
+  background: var(--c-lava);
+  color: var(--c-canvas-warm);
+  border-radius: var(--radius-lg);
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 420px;
+}
+
+.brand {
+  position: relative;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 28px;
+  letter-spacing: -0.03em;
+  color: var(--c-dark);
+}
+
+.title {
+  position: relative;
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(80px, 12vw, 200px);
+  line-height: 0.82;
+  letter-spacing: -0.05em;
+}
+
+.panel {
+  align-self: center;
+  width: 100%;
+  max-width: 420px;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.panelTitle {
+  margin: 0 0 16px;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 48px;
+  letter-spacing: -0.035em;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 15px;
+}
+
+.field input {
+  border: 0;
+  border-bottom: 1px solid var(--c-hairline-warm);
+  background: transparent;
+  padding: 12px 0;
+  font-size: 18px;
+  color: var(--c-ink);
+}
+
+.field input:focus-visible {
+  outline: none;
+  border-bottom-color: var(--c-lava);
+}
+
+.error {
+  min-height: 1.4em;
+  margin: 0;
+  color: var(--c-lava-active);
+  font-size: 15px;
+}
+
+.submit {
+  align-self: flex-start;
+  min-height: 48px;
+  padding: 14px 24px;
+  border: 0;
+  border-radius: var(--radius-xs);
+  background: var(--c-dark);
+  color: var(--c-canvas-warm);
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.submit:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+@media (max-width: 760px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+  .lava {
+    min-height: 280px;
+    padding: 28px;
+  }
+}

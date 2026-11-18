@@ -1,0 +1,138 @@
+.page {
+  min-height: 100vh;
+  --active: var(--c-lava-on-dark);
+}
+
+.main {
+  padding-top: 72px;
+  padding-bottom: 120px;
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 32px 64px;
+}
+
+.title {
+  flex: 1 1 560px;
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(72px, 13vw, 235px);
+  line-height: 0.82;
+  letter-spacing: -0.05em;
+}
+
+.dot {
+  color: var(--c-lava);
+}
+
+.stat {
+  flex: 0 1 340px;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 12px;
+}
+
+.statValue {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 72px;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+}
+
+.statLabel {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.45;
+  color: #e7e4e4;
+}
+
+.toolbar {
+  margin-top: 72px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 32px;
+  align-items: center;
+  border-top: 0.5px solid var(--c-hairline-dark);
+  padding-top: 24px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filter {
+  min-height: 44px;
+  border-radius: var(--radius-pill);
+  padding: 9px 18px;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  background: transparent;
+  color: var(--c-surface-soft);
+  border: 1px solid rgba(250, 249, 245, 0.5);
+}
+
+.filter[aria-pressed="true"] {
+  background: var(--c-surface-soft);
+  color: var(--c-dark);
+  border-color: var(--c-surface-soft);
+}
+
+.search {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: min(280px, 100%);
+  border-bottom: 0.5px solid var(--c-hairline-dark);
+}
+
+.search input {
+  flex: 1;
+  border: 0;
+  background: transparent;
+  font-size: 16px;
+  color: var(--c-surface-soft);
+  padding: 12px 0;
+}
+
+.search input::placeholder {
+  color: var(--c-muted-on-dark);
+}
+
+.search input:focus-visible {
+  outline: none;
+}
+
+.search:focus-within {
+  border-bottom-color: var(--c-lava-on-dark);
+}
+
+.count {
+  margin: 32px 0 32px;
+  color: var(--c-muted-on-dark);
+}
+
+.empty,
+.loading {
+  color: var(--c-muted-on-dark);
+  font-size: 18px;
+  margin-top: 56px;
+}
+
+@media (max-width: 760px) {
+  .search {
+    margin-left: 0;
+    width: 100%;
+  }
+}
